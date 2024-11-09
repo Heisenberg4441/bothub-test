@@ -50,11 +50,11 @@ server.get('/private/user/newPrompt', async (req, res) => {
     const priceOfModel = await checkCost(tokensInMessage, genData.id, genData.credits, model);
 
     if (priceOfModel === false) {
-        res.send('Недостаточно токенов!');
+        res.send('Not enough tokens!');
         return;
     };
     if (!priceOfModel.input || !priceOfModel.output) {
-        res.status(500).send('Расценки модели не найдены');
+        res.status(500).send("do not find model's price");
     };
 
     res.setHeader('Content-Type', 'text/event-stream');
@@ -75,7 +75,7 @@ server.get('/private/user/newPrompt', async (req, res) => {
     req.on('close', () => {
         chatEmitter.off('data', onData);
         res.end();
-        res.send('Чат закрыт');
+        res.send('Chat closed');
         return;
     });
 });

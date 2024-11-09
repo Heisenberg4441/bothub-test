@@ -11,7 +11,7 @@ server.options(".*", async (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', "*");
     res.setHeader('Access-Control-Request-Headers', "auth,content-type");
     res.setHeader('Access-Control-Allow-Headers', "auth,content-type");
-    res.sendStatus(200); // Отправляем ответ для завершения OPTIONS-запроса
+    res.sendStatus(200);
 });
 
 server.use('/admin/', async (req, res, next) => {

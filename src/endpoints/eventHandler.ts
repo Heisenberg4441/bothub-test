@@ -3,7 +3,7 @@ import { server, port } from "..";
 import { config } from "../config";
 
 server.listen(port, () => {
-    console.log(`Сервер запущен! Порт ${port}`);
+    console.log(`Server started, port: ${port}`);
     console.log(`Swagger docs available at http://localhost:${port}/api-docs`);
 });
 server.use('/', async (req, res) => {

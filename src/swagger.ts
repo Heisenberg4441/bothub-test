@@ -8,7 +8,7 @@ export const options = {
         },
         servers: [
             {
-                url: "http://localhost:3000", // Замените на ваш базовый URL
+                url: "http://localhost:3000",
             },
         ],
         components: {
@@ -16,11 +16,11 @@ export const options = {
                 BearerAuth: {
                     type: "http",
                     scheme: "bearer",
-                    bearerFormat: "token" // Указывает, что это обычный токен, а не JWT
+                    bearerFormat: "token"
                 },
                 BasicAuth: {
                     type: "http",
-                    scheme: "basic" // Используется для Basic авторизации
+                    scheme: "basic"
                 }
             }
         },
@@ -31,9 +31,9 @@ export const options = {
             {
                 BasicAuth: [],
             }
-        ] as Array<Record<string, any>> // Указание типа для security
+        ] as Array<Record<string, any>>
     },
-    apis: ["./src/endpoints/*.ts"], // Указать путь к вашим файлам с кодом
+    apis: ["./src/endpoints/*.ts"],
 };
 
 export default options;
